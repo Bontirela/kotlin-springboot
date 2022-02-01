@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 plugins {
     id("org.springframework.boot") version "2.6.3"
@@ -46,10 +45,17 @@ dependencies {
     //runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
 
+    //GSON
+    implementation("com.google.code.gson:gson:2.8.5")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux")
     testImplementation("io.mockk:mockk:1.10.4")
     testImplementation("com.ninja-squad:springmockk:3.0.1")
+    testImplementation("io.rest-assured:rest-assured:4.0.0")
+    testImplementation("io.rest-assured:json-path:4.0.0")
+
+
 
     //test-containers
     testImplementation("org.testcontainers:junit-jupiter")
